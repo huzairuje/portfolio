@@ -1,0 +1,119 @@
+/* Animated Gradient Background */
+@keyframes gradientBG {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+.animated-gradient {
+    background: linear-gradient(-45deg, #BD5D38, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+    background-size: 400% 400%;
+    animation: gradientBG 15s ease infinite;
+}
+
+/* Hover Lift Effect */
+.hover-lift {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.hover-lift:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    background-color: rgba(255, 255, 255, 0.5);
+    border-radius: 10px;
+    padding: 10px;
+    margin: -10px;
+    /* Compensate for padding to keep layout stable */
+    z-index: 10;
+    position: relative;
+}
+
+
+/* Pulse Animation for Profile Picture */
+@keyframes pulse-border {
+    0% {
+        transform: scale(1);
+        box-shadow: 0 0 0 0 rgba(189, 93, 56, 0.7);
+    }
+
+    70% {
+        transform: scale(1.05);
+        box-shadow: 0 0 0 20px rgba(189, 93, 56, 0);
+    }
+
+    100% {
+        transform: scale(1);
+        box-shadow: 0 0 0 0 rgba(189, 93, 56, 0);
+    }
+}
+
+.pulse-profile {
+    animation: pulse-border 2s infinite;
+}
+
+/* Text Gradient */
+.text-gradient {
+    background: linear-gradient(to right, #BD5D38, #343a40);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* Typed Cursor Color */
+.typed-cursor {
+    color: #BD5D38;
+}
+
+/* Download CV CTA Button */
+@keyframes bounce-soft {
+
+    0%,
+    20%,
+    50%,
+    80%,
+    100% {
+        transform: translateY(0);
+    }
+
+    40% {
+        transform: translateY(-5px);
+    }
+
+    60% {
+        transform: translateY(-3px);
+    }
+}
+
+.download-cta {
+    background-color: rgba(255, 255, 255, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    border-radius: 5px;
+    margin-bottom: 15px;
+    /* Separate from other nav items */
+    transition: all 0.3s ease;
+    animation: bounce-soft 2s infinite;
+}
+
+.download-cta:hover {
+    background-color: #fff !important;
+    /* Force white background on hover */
+    color: #BD5D38 !important;
+    /* Brand color text */
+    transform: scale(1.05);
+    /* Slight grow */
+    animation: none;
+    /* Stop bounce on hover */
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.5);
+}
+
+.download-cta i {
+    margin-right: 8px;
+}
