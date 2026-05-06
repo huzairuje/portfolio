@@ -42,11 +42,11 @@
 
 <body id="page-top">
 
-  <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top animated-gradient" id="sideNav">
+  <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top" id="sideNav">
     <a class="navbar-brand js-scroll-trigger" href="#page-top">
       <span class="d-block d-lg-none">Muhammad Huzair</span>
       <span class="d-none d-lg-block">
-        <img class="img-fluid img-profile rounded-circle mx-auto mb-2 pulse-profile" src="img/pp.jpeg"
+        <img class="img-fluid img-profile rounded-circle mx-auto mb-2" src="img/pp.jpeg"
           alt="Muhammad Huzair">
       </span>
     </a>
@@ -56,6 +56,11 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav">
+        <li class="nav-item">
+          <button class="nav-link theme-toggle-btn" id="themeToggle" type="button" aria-label="Toggle theme">
+            <i class="fa fa-moon-o"></i> Dark Mode
+          </button>
+        </li>
         <li class="nav-item">
           <!-- <a class="nav-link js-scroll-trigger" href="#about">About</a> -->
           <a class="nav-link js-scroll-trigger download-cta" href="file/Muhammad Huzair-Resume.pdf" download
@@ -124,6 +129,14 @@
               <span class="fa-stack fa-lg">
                 <i class="fa fa-circle fa-stack-2x"></i>
                 <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+              </span>
+            </a>
+          </li>
+          <li class="list-inline-item">
+            <a href="https://huzairuje.github.io">
+              <span class="fa-stack fa-lg">
+                <i class="fa fa-circle fa-stack-2x"></i>
+                <i class="fa fa-globe fa-stack-1x fa-inverse"></i>
               </span>
             </a>
           </li>
@@ -460,11 +473,47 @@
   <!-- Custom scripts for this template -->
   <script src="js/resume.min.js"></script>
 
+  <script>
+    (function () {
+      var THEME_KEY = 'preferred-theme';
+      var body = document.body;
+      var button = document.getElementById('themeToggle');
+
+      function applyTheme(theme) {
+        body.setAttribute('data-theme', theme);
+        localStorage.setItem(THEME_KEY, theme);
+
+        if (!button) return;
+        if (theme === 'dark') {
+          button.innerHTML = "<i class='fa fa-sun-o'></i> Light Mode";
+        } else {
+          button.innerHTML = "<i class='fa fa-moon-o'></i> Dark Mode";
+        }
+      }
+
+      var savedTheme = localStorage.getItem(THEME_KEY);
+      if (savedTheme === 'light' || savedTheme === 'dark') {
+        applyTheme(savedTheme);
+      }
+
+      if (button) {
+        button.addEventListener('click', function () {
+          var current = body.getAttribute('data-theme');
+          if (!current) {
+            current = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+          }
+          applyTheme(current === 'dark' ? 'light' : 'dark');
+        });
+      }
+    })();
+  </script>
+
   <!-- Typed.js -->
   <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
   <script>
     var typed = new Typed('.typed-text', {
-      strings: ["Experienced Software Engineer specialized in Backend or Webserver Services and Software Engineering, focused in Backend and DevOps for now."],
+      strings: ["Experienced Software Engineer specialized in Backend or Webserver Services and Software Engineering, focused in Backend and DevOps for now, and also currently write blogs about my experience and my journey as a software engineer on the real world backend engineering. You can check it out on my website at <a href='https://huzairuje.github.io' target='_blank' rel='noopener noreferrer'>huzairuje.github.io</a>"],
+      contentType: 'html',
       typeSpeed: 20,
       backSpeed: 0,
       loop: false,

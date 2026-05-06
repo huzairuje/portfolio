@@ -72,6 +72,26 @@
     color: #BD5D38;
 }
 
+/* Keep hero typed text calm in light mode */
+.typed-text {
+    color: #4f5b66;
+}
+
+.typed-text a {
+    color: #bd5d38;
+    font-weight: 600;
+    text-decoration: underline;
+}
+
+.typed-text a:hover,
+.typed-text a:focus {
+    color: #9e4d2f;
+}
+
+.typed-cursor {
+    color: #4f5b66;
+}
+
 /* Download CV CTA Button */
 @keyframes bounce-soft {
 
@@ -116,4 +136,264 @@
 
 .download-cta i {
     margin-right: 8px;
+}
+
+/* Make sidebar theme consistent with main section */
+#sideNav {
+    background-color: #dfe3e8 !important;
+}
+
+#sideNav .navbar-nav .nav-link {
+    color: #4f5b66 !important;
+    font-weight: 700;
+}
+
+#sideNav .navbar-nav .nav-link:hover,
+#sideNav .navbar-nav .nav-link:focus,
+#sideNav .navbar-nav .nav-link.active {
+    color: #2f3a44 !important;
+}
+
+#sideNav .navbar-brand .img-profile {
+    border: 0.5rem solid rgba(52, 58, 64, 0.12) !important;
+}
+
+/* Improve readability in light mode */
+body:not([data-theme="dark"]) section.resume-section p,
+body:not([data-theme="dark"]) section.resume-section li,
+body:not([data-theme="dark"]) section.resume-section .subheading {
+    color: #4f5b66;
+}
+
+.download-cta {
+    background-color: transparent;
+    border: 1px solid #bd5d38;
+    color: #bd5d38 !important;
+    animation: none;
+}
+
+.download-cta:hover {
+    background-color: #bd5d38 !important;
+    color: #ffffff !important;
+    transform: none;
+    box-shadow: none;
+}
+
+/* Theme toggle button in sidebar */
+.theme-toggle-btn {
+    width: 100%;
+    border: 1px solid #4f5b66;
+    border-radius: 5px;
+    margin-bottom: 12px;
+    background: transparent;
+    color: #2f3a44 !important;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.theme-toggle-btn:hover,
+.theme-toggle-btn:focus {
+    background-color: #cfd5dc;
+    color: #24303a !important;
+    outline: none;
+}
+
+.theme-toggle-btn i {
+    margin-right: 8px;
+}
+
+/* Dark theme (manual override) */
+body[data-theme="dark"] {
+    background-color: #0f141a;
+    color: #aeb8c2;
+}
+
+body[data-theme="dark"] h1,
+body[data-theme="dark"] h2,
+body[data-theme="dark"] h3,
+body[data-theme="dark"] h4,
+body[data-theme="dark"] h5,
+body[data-theme="dark"] h6 {
+    color: #e6edf3;
+}
+
+body[data-theme="dark"] section.resume-section {
+    border-bottom: 1px solid #2b3440;
+}
+
+body[data-theme="dark"] .subheading {
+    color: #9aa7b5;
+}
+
+body[data-theme="dark"] #sideNav {
+    background-color: #1b232d !important;
+}
+
+body[data-theme="dark"] #sideNav .navbar-nav .nav-link {
+    color: #c6d0db !important;
+}
+
+body[data-theme="dark"] #sideNav .navbar-nav .nav-link:hover,
+body[data-theme="dark"] #sideNav .navbar-nav .nav-link:focus,
+body[data-theme="dark"] #sideNav .navbar-nav .nav-link.active {
+    color: #ffffff !important;
+}
+
+body[data-theme="dark"] #sideNav .navbar-brand .img-profile {
+    border: 0.5rem solid rgba(255, 255, 255, 0.18) !important;
+}
+
+body[data-theme="dark"] .download-cta {
+    border-color: #bd5d38;
+    color: #ffb293 !important;
+}
+
+body[data-theme="dark"] .download-cta:hover {
+    background-color: #bd5d38 !important;
+    color: #ffffff !important;
+}
+
+body[data-theme="dark"] .theme-toggle-btn {
+    border-color: #9aa7b5;
+    color: #e6edf3 !important;
+}
+
+body[data-theme="dark"] .theme-toggle-btn:hover,
+body[data-theme="dark"] .theme-toggle-btn:focus {
+    background-color: #2b3642;
+    color: #e6edf3 !important;
+}
+
+body[data-theme="dark"] .list-social-icons a {
+    color: #8f9aa6;
+}
+
+body[data-theme="dark"] .list-social-icons a:hover {
+    color: #bd5d38;
+}
+
+body[data-theme="dark"] a {
+    color: #ff9d74;
+}
+
+body[data-theme="dark"] a:hover,
+body[data-theme="dark"] a:focus,
+body[data-theme="dark"] a:active {
+    color: #ffb08f;
+}
+
+body[data-theme="dark"] .typed-text {
+    color: #aeb8c2;
+}
+
+body[data-theme="dark"] .typed-text a {
+    color: #ffb293;
+}
+
+body[data-theme="dark"] .typed-cursor {
+    color: #ffb293;
+}
+
+body[data-theme="dark"] .hover-lift:hover {
+    background-color: rgba(43, 54, 66, 0.45);
+    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.35);
+}
+
+/* Dark theme (auto by system, unless manually selected) */
+@media (prefers-color-scheme: dark) {
+    body:not([data-theme]) {
+        background-color: #0f141a;
+        color: #aeb8c2;
+    }
+
+    body:not([data-theme]) h1,
+    body:not([data-theme]) h2,
+    body:not([data-theme]) h3,
+    body:not([data-theme]) h4,
+    body:not([data-theme]) h5,
+    body:not([data-theme]) h6 {
+        color: #e6edf3;
+    }
+
+    body:not([data-theme]) section.resume-section {
+        border-bottom: 1px solid #2b3440;
+    }
+
+    body:not([data-theme]) .subheading {
+        color: #9aa7b5;
+    }
+
+    body:not([data-theme]) #sideNav {
+        background-color: #1b232d !important;
+    }
+
+    body:not([data-theme]) #sideNav .navbar-nav .nav-link {
+        color: #c6d0db !important;
+    }
+
+    body:not([data-theme]) #sideNav .navbar-nav .nav-link:hover,
+    body:not([data-theme]) #sideNav .navbar-nav .nav-link:focus,
+    body:not([data-theme]) #sideNav .navbar-nav .nav-link.active {
+        color: #ffffff !important;
+    }
+
+    body:not([data-theme]) #sideNav .navbar-brand .img-profile {
+        border: 0.5rem solid rgba(255, 255, 255, 0.18) !important;
+    }
+
+    body:not([data-theme]) .download-cta {
+        border-color: #bd5d38;
+        color: #ffb293 !important;
+    }
+
+    body:not([data-theme]) .download-cta:hover {
+        background-color: #bd5d38 !important;
+        color: #ffffff !important;
+    }
+
+    body:not([data-theme]) .theme-toggle-btn {
+        border-color: #9aa7b5;
+        color: #e6edf3 !important;
+    }
+
+    body:not([data-theme]) .theme-toggle-btn:hover,
+    body:not([data-theme]) .theme-toggle-btn:focus {
+        background-color: #2b3642;
+        color: #e6edf3 !important;
+    }
+
+    body:not([data-theme]) .list-social-icons a {
+        color: #8f9aa6;
+    }
+
+    body:not([data-theme]) .list-social-icons a:hover {
+        color: #bd5d38;
+    }
+
+    body:not([data-theme]) a {
+        color: #ff9d74;
+    }
+
+    body:not([data-theme]) a:hover,
+    body:not([data-theme]) a:focus,
+    body:not([data-theme]) a:active {
+        color: #ffb08f;
+    }
+
+    body:not([data-theme]) .typed-text {
+        color: #aeb8c2;
+    }
+
+    body:not([data-theme]) .typed-text a {
+        color: #ffb293;
+    }
+
+    body:not([data-theme]) .typed-cursor {
+        color: #ffb293;
+    }
+
+    body:not([data-theme]) .hover-lift:hover {
+        background-color: rgba(43, 54, 66, 0.45);
+        box-shadow: 0 8px 18px rgba(0, 0, 0, 0.35);
+    }
 }
